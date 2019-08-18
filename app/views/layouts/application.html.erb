@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Panthéon</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="/">Panthéon</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item"><%= link_to 'Personnalités', personalities_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Utilisateurs', users_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Mon panthéon personnel', me_path, class: 'nav-link' %></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </body>
+</html>

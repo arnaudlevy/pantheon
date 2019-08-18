@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: choices
+#
+#  id             :bigint           not null, primary key
+#  user_id        :bigint
+#  personality_id :bigint
+#  importance     :integer
+#  description    :text
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  personality: one
+  importance: 1
+  description: MyText
+
+two:
+  user: two
+  personality: two
+  importance: 1
+  description: MyText

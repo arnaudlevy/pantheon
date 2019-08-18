@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @personality.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @personality.last_name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @personality.name %>
+</p>
+
+<p>
+  <strong>Wikipedia url:</strong>
+  <%= @personality.wikipedia_url %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @personality.photo %>
+</p>
+
+<%= link_to 'Edit', edit_personality_path(@personality) %> |
+<%= link_to 'Back', personalities_path %>

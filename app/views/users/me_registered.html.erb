@@ -1,0 +1,9 @@
+<h1><%= current_user %></h1>
+
+<input 	type="text"
+		placeholder="Entrez le nom d'une personnalité à ajouter à votre panthéon"
+		name="personality"
+		class="form-control"
+		autofocus>
+
+<%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'btn btn-light mt-5' %>
