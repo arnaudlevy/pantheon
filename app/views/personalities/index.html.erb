@@ -1,12 +1,14 @@
 <h1>Personnalités</h1>
 
+<%= render 'personalities/search' %>
+
 <div class="row">
   <% @personalities.each do |personality| %>
-    <div class="col-md-3">
-      <%= link_to personality do %>
-        <%= image_tag personality.photo %>
-        <%= personality.to_s %>
-      <% end %>
-    </tr>
+    <div class="col-md-2">
+        <%= link_to personality do %>
+            <%= image_tag personality.photo, class: 'img-fluid' if personality.photo %>
+            <%= personality.to_s %>
+        <% end %>
+    </div>
   <% end %>
 </div>

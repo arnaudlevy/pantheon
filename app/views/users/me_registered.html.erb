@@ -1,9 +1,19 @@
 <h1><%= current_user %></h1>
 
-<input 	type="text"
-		placeholder="Entrez le nom d'une personnalité à ajouter à votre panthéon"
-		name="personality"
-		class="form-control"
-		autofocus>
+<%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'btn btn-light btn-sm mb-3' %>
 
-<%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'btn btn-light mt-5' %>
+<%= render 'personalities/search' %>
+
+<div class="row">
+    <% @personalities.each do |personality| %>
+        <div class="col-md-2">
+	        <%= link_to personality do %>
+	            <%= image_tag personality.photo, class: 'img-fluid' if personality.photo %>
+	            <%= personality.to_s %>
+	        <% end %>
+	        <blockquote>
+	        	<%= personality.choices.where(user: current_user).first.description %>
+	        </blockquote>
+        </div>
+    <% end %>
+</div>

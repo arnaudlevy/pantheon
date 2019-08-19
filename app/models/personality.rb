@@ -13,6 +13,13 @@
 #
 
 class Personality < ApplicationRecord
+  has_many :choices, dependent: :destroy
+  has_many :users, through: :choices
 
-  scope :search, -> (term) { where('name LIKE ?', term) }
+  scope :search, -> (term) { where('name ILIKE ?', term) }
+  default_scope { order(:name) }
+
+  def to_s
+    "#{name}"
+  end
 end

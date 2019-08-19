@@ -1,0 +1,9 @@
+<%= form_tag personality_search_path, class: 'mb-3' do %>
+    <input  type="text"
+            placeholder="Entrez le nom d'une personnalité"
+            name="name"
+            class="form-control"
+            autofocus>
+    <p><%= notice %></p>
+    <%= submit_tag 'Trouver', class: 'btn btn-primary' %>
+<% end %>

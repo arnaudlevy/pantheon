@@ -25,6 +25,8 @@ class Mediawiki
     if results.any?
       @page_id = results.first['pageid']
       get_page_info
+      get_page_image
+      get_page_text
     end
   end
 
@@ -32,15 +34,20 @@ class Mediawiki
     response = client.query(prop: 'info', pageids: @page_id, inprop: 'url')
     data = response.data['pages'][@page_id.to_s]
     @page = {
-      url: data['fullurl'],
-      name: data['title']
+      fullurl: data['fullurl'],
+      title: data['title']
     }
-    get_page_image
   end
 
   def get_page_image
     response = client.query(prop: 'pageimages', pageids: @page_id, pithumbsize: 500)
     data = response.data['pages'][@page_id.to_s]
-    @page[:photo] = data['thumbnail']['source']
+    @page[:thumbnail] = data['thumbnail']['source'] if data.has_key? 'thumbnail'
+  end
+
+  def get_page_text
+    response = client.query(prop: 'extracts', pageids: @page_id, exintro: true)
+    data = response.data['pages'][@page_id.to_s]
+    @page[:extract] = data['extract']
   end
 end
