@@ -1,5 +1,12 @@
-<h1><%= @personality %></h1>
-<p class="small"><%= link_to @personality.wikipedia_url, @personality.wikipedia_url, target: :_blank, class: 'small' %></p>
+<div class="row">
+    <div class="col-md-2 offset-md-5 mb-5">
+        <%= image_tag @personality.photo, class: 'img-fluid' if @personality.photo %>
+    </div>
+</div>
+<h1 class="mb-1"><%= @personality %></h1>
+<p class="text-center small mb-5">
+    <%= link_to @personality.wikipedia_url, @personality.wikipedia_url, target: :_blank, class: 'small' %>
+</p>
 
 <% if @personality.choices.none? %>
     <div class="mb-3">
@@ -8,13 +15,9 @@
     </div>
 <% end %>
 <div class="row">
-    <div class="col-md-2">
-        <%= image_tag @personality.photo, class: 'img-fluid' if @personality.photo %>
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-6 offset-md-3">
         <%= raw @personality.description %>
-    </div>
-    <div class="col-md-4 offset-md-2">
+        <hr class="mb-5 mt-5" />
         <h2>Mon Panthéon personnel</h2>
         <% if user_signed_in? %>
             <% if @choice.new_record? %>
