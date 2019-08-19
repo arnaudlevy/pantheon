@@ -1,5 +1,5 @@
 <h1><%= @personality %></h1>
-<p class="small"><%= link_to @personality.wikipedia_url, target: :_blank, class: 'small' %></p>
+<p class="small"><%= link_to @personality.wikipedia_url, @personality.wikipedia_url, target: :_blank, class: 'small' %></p>
 
 <% if @personality.choices.none? %>
     <div class="mb-3">
