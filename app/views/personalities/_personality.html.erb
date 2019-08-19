@@ -1,0 +1,6 @@
+<div class="personality">
+    <%= link_to personality do %>
+        <%= render 'personalities/personality_photo', photo: personality.photo %>
+        <p class="personality__name"><%= personality.to_s %></p>
+    <% end %>
+</div>
