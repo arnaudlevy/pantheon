@@ -1,6 +1,6 @@
 <div class="row">
     <% personalities.each do |personality| %>
-        <div class="col-md-2">
+        <div class="col-md-2 mb-5">
             <%= link_to personality do %>
                 <%= image_tag personality.photo, class: 'img-fluid' if personality.photo %>
                 <%= personality.to_s %>
