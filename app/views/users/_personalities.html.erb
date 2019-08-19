@@ -1,10 +1,7 @@
 <div class="row">
     <% personalities.each do |personality| %>
         <div class="col-md-2 mb-5">
-            <%= link_to personality do %>
-                <%= image_tag personality.photo, class: 'img-fluid' if personality.photo %>
-                <%= personality.to_s %>
-            <% end %>
+            <%= render personality %>
             <blockquote>
                 <%= personality.choices.where(user: user).first.description %>
             </blockquote>

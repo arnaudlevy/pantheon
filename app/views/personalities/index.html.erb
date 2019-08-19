@@ -5,10 +5,7 @@
 <div class="row">
   <% @personalities.each do |personality| %>
     <div class="col-md-2 mb-5">
-        <%= link_to personality do %>
-            <%= image_tag personality.photo, class: 'img-fluid' if personality.photo %>
-            <p class="mt-2"><%= personality.to_s %></p>
-        <% end %>
+        <%= render personality %>
     </div>
   <% end %>
 </div>

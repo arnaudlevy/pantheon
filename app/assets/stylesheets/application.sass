@@ -4,32 +4,57 @@ $theme-colors: ('primary': #000000)
 @import 'bootstrap'
 
 *
-	font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif
 
 h1
-	font-family: 'Cinzel Decorative'
-	text-align: center
+    font-family: 'Cinzel Decorative'
+    text-align: center
 
 h2
-	font-size: 1.3rem
+    font-size: 1.3rem
 
 h3
-	font-size: 1.1rem
-	font-weight: bold
+    font-size: 1.1rem
+    font-weight: bold
+
+a:hover
+    text-decoration: none
+
+.personality
+    &__photo
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        height: 0
+        padding-bottom: 100%
+        position: relative
+        width: 100%
+        border-radius: 50%
+        height: auto
+        max-width: 100%
+    &__name
+        margin-top: 10px
+        text-align: center
+        font-family: 'Cinzel Decorative'
+
+blockquote
+    font-style: italic
+    font-weight: 1.1rem
+    text-align: center
 
 .navbar
-	.navbar-brand
-		font-family: 'Cinzel Decorative'
-		letter-spacing: 3px
-		span
-			font-family: 'Roboto', sans-serif
-			font-size: 9px
-			font-weight: bold
-			letter-spacing: 0
-			margin-left: -3px
+    .navbar-brand
+        font-family: 'Cinzel Decorative'
+        letter-spacing: 3px
+        span
+            font-family: 'Roboto', sans-serif
+            font-size: 9px
+            font-weight: bold
+            letter-spacing: 0
+            margin-left: -3px
 
-	.nav-link
-		font-family: 'Roboto', sans-serif
-		font-size: 12px
-		text-transform: uppercase
-		color: black
+    .nav-link
+        font-family: 'Roboto', sans-serif
+        font-size: 12px
+        text-transform: uppercase
+        color: black
