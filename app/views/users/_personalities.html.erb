@@ -2,9 +2,10 @@
     <% personalities.each do |personality| %>
         <div class="col-md-2 mb-5">
             <%= render personality %>
-            <blockquote>
-                <%= personality.choices.where(user: user).first.description %>
-            </blockquote>
+            <% description = personality.choices.where(user: user).first.description %>
+            <% unless description.blank? %>
+                <blockquote><%= description %></blockquote>
+            <% end %>
         </div>
     <% end %>
 </div>
