@@ -1,20 +1,23 @@
 $theme-colors: ('primary': #000000)
+$font1: 'IM Fell Great Primer'
+$font2: 'Montserrat', sans-serif
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Roboto:400,400i,700,700i&display=swap')
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:400,400i|Montserrat:400,400i,700,700i&display=swap')
 @import 'bootstrap'
 
 *
     font-family: 'Roboto', sans-serif
 
 h1
-    font-family: 'Cinzel Decorative'
+    font-family: $font1
     text-align: center
 
 h2
-    font-size: 1.3rem
+    font-size: 1.2rem
+    margin: 20px 0
 
 h3
-    font-size: 1.1rem
+    font-size: 1rem
     font-weight: bold
 
 a:hover
@@ -35,26 +38,34 @@ a:hover
     &__name
         margin-top: 10px
         text-align: center
-        font-family: 'Cinzel Decorative'
+        font-family: $font1
 
 blockquote
+    font-family: $font1
     font-style: italic
     font-weight: 1.1rem
     text-align: center
+    &:before
+        content: '“'
+    &:after
+        content: '”'
 
 .navbar
     .navbar-brand
-        font-family: 'Cinzel Decorative'
+        font-family: $font1
         letter-spacing: 3px
+        text-transform: uppercase
+        line-height: 1.2rem
         span
-            font-family: 'Roboto', sans-serif
+            display: block
+            font-family: $font2
+            text-transform: none
             font-size: 9px
-            font-weight: bold
             letter-spacing: 0
-            margin-left: -3px
+            margin-top: -5px
 
     .nav-link
-        font-family: 'Roboto', sans-serif
+        font-family: $font2
         font-size: 12px
         text-transform: uppercase
         color: black

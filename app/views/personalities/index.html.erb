@@ -1,10 +1,10 @@
-<h1 class="m-5">Personnalités</h1>
+<h1 class="mt-5 mb-5">Personnalités</h1>
 
 <%= render 'personalities/search' %>
 
 <div class="row">
   <% @personalities.each do |personality| %>
-    <div class="col-md-2 mb-5">
+    <div class="col-md-2 mb-5 col-6">
         <%= render personality %>
     </div>
   <% end %>
