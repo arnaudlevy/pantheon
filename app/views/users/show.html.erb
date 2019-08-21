@@ -1,5 +1,11 @@
-<p class="mt-5 small text-center">Panthéon personnel de</p>
-<h1 class="mb-5"><%= @user %></h1>
+<% @title = "Panthéon personnel de... #{@user}" %>
+<%= content_for :title, @title %>
+<p class="mt-5 small text-center">Panthéon personnel de...</p>
+<h1 class="mb-3"><%= @user %></h1>
+
+<div class="text-center mb-5">
+    <%= social_share_button_tag(@title) %>
+</div>
 
 <%= render 'personalities/search' if @user == current_user %>
 

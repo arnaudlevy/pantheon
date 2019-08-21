@@ -1,3 +1,5 @@
+<%= content_for :title, @personality %>
+
 <div class="row mt-5">
     <div class="col-md-2 offset-md-5 mb-5 col-8 offset-2">
         <%= render 'personalities/personality_photo', photo: @personality.photo %>
@@ -53,8 +55,8 @@
         </div>
     </div>
     <div class="col-md-4 offset-md-1">
-        <%= raw @personality.description %>
         <hr class="mb-5 mt-5" />
+        <%= raw @personality.description %>
     </div>
 </div>
 
