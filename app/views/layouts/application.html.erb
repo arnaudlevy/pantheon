@@ -25,13 +25,13 @@
         <nav class="nav">
           <%= link_to 'Personnalités', personalities_path, class: 'nav-link' %>
           <%= link_to 'Utilisateurs', users_path, class: 'nav-link' %>
-          <%= link_to 'Mon panthéon personnel', me_path, class: 'nav-link' %>
+          <%= link_to 'Mon panthéon personnel', user_signed_in? ? user_path(current_user) : me_path, class: 'nav-link' %>
         </nav>
       </div>
     </nav>
     <div class="container-fluid">
       <%= yield %>
-      <footer class="text-muted small mt-5 mb-3">
+      <footer class="text-muted text-center small mt-5 mb-3">
         Un projet inutile et <a href="https://github.com/arnaudlevy/pantheon" target="_blank">open source</a>
         imaginé et développé par <a href="https://arnaudlevy.com" target="_blank">Arnaud Levy</a>
       </footer>

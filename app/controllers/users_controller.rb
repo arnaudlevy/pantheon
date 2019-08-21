@@ -11,10 +11,5 @@ class UsersController < ApplicationController
   end
 
   def me
-    user_signed_in? ? render(:me_registered)
-                    : render(:me_unregistered)
-  end
-
-  def update_me
   end
 end

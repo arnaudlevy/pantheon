@@ -1,4 +1,11 @@
 <p class="mt-5 small text-center">Panthéon personnel de</p>
 <h1 class="mb-5"><%= @user %></h1>
 
+<%= render 'personalities/search' if @user == current_user %>
+
 <%= render 'users/personalities', choices: @user.choices, user: @user %>
+
+<%= link_to 'Déconnexion',
+            destroy_user_session_path,
+            method: :delete,
+            class: 'btn btn-light btn-sm mb-3' if @user == current_user %>
