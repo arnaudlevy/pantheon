@@ -20,6 +20,6 @@ class ChoicesController < ApplicationController
   protected
 
   def choice_params
-    params.require(:choice).permit(:user_id, :personality_id, :description)
+    params.require(:choice).permit(:user_id, :personality_id, :description, :major)
   end
 end

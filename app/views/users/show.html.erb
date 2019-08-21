@@ -1,3 +1,4 @@
-<h1 class="mt-5 mb-5"><%= @user %></h1>
+<p class="mt-5 small text-center">Panthéon personnel de</p>
+<h1 class="mb-5"><%= @user %></h1>
 
-<%= render 'users/personalities', personalities: @user.personalities, user: @user %>
+<%= render 'users/personalities', choices: @user.choices, user: @user %>

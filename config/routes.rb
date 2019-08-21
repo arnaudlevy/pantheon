@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'users/me' => 'users#me', as: :me
   post 'users/me' => 'users#update_me'
-  post 'users/choose-personality' => 'users#choose_personality'
   resources :users, only: [:index, :show]
   post 'personalities/search' => 'personalities#search', as: :personality_search
   resources :personalities, only: [:index, :show, :create, :destroy]

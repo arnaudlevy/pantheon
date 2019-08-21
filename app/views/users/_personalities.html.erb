@@ -1,6 +1,22 @@
+<h2 class="text-center">Influences majeures</h2>
 <div class="row">
-    <% personalities.each do |personality| %>
-        <div class="col-md-2 mb-5">
+    <% choices.major.each do |choice| %>
+        <% personality = choice.personality %>
+        <div class="col-md-3 mb-5 col-6">
+            <%= render personality %>
+            <% description = personality.choices.where(user: user).first.description %>
+            <% unless description.blank? %>
+                <blockquote><%= description %></blockquote>
+            <% end %>
+        </div>
+    <% end %>
+</div>
+<hr class="mt-5 mb-5" />
+<h2 class="text-center">Influences mineures</h2>
+<div class="row">
+    <% choices.minor.each do |choice| %>
+        <% personality = choice.personality %>
+        <div class="col-md-2 mb-5 col-4">
             <%= render personality %>
             <% description = personality.choices.where(user: user).first.description %>
             <% unless description.blank? %>
